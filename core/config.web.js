@@ -13,9 +13,8 @@ var logger = log4js.getLogger('normal');
 module.exports = applyConf();
 
 function applyConf(){
-  var port = process.env.PORT ||3000;
   var app_dir = path.join(_ROOT_, 'app');
-  var site_dir = path.join(app_dir, 'ublog');
+  var site_dir = path.join(app_dir, global._APP_NAME_);
   var tpl_suffix = 'html';
   var site_conf = {};
   try{
@@ -24,7 +23,6 @@ function applyConf(){
     console.error(e);
   }
   return {
-    port: port,
     app_dir: app_dir,
     site_dir: site_dir,
     site_conf: site_conf,
