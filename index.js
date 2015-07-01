@@ -7,15 +7,26 @@
 
 global._ROOT_ = __dirname;
 
-var express = require('express');
 var http = require('http');
-var conf = require('./config.web');
+var express = require('express');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var multer = require('multer');
+var conf = require('./core/config.web');
 var route = require('./core/route');
 var app = express();
 var server = http.createServer(app);
 
+//设置 Cookie
+app.use(cookieParser());
+
+//解析参数
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(multer()); // for parsing multipart/form-data
+
 //开启日志
-conf.startLog(app);
+//conf.startLog(app);
 
 //开启模板引擎
 conf.startTplEngine(app);

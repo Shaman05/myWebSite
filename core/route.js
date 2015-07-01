@@ -5,7 +5,7 @@
  * Time: 15:31
  */
 
-var conf = require('../config.web');
+var conf = require('./config.web');
 
 module.exports = {
   start: function(app){

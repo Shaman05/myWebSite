@@ -1,0 +1,107 @@
+<% include utribe-header.html %>
+<header class="bar bar-cgt has-arr"><a href="javascript:;" class="arr-left inline"></a>积分兑换</header>
+<div class="padding hasFooter-menu">
+  <%if(list.length > 0){%>
+  <%list.forEach(function(item){%>
+  <%
+    var titleColor = 'red';
+    var iconCn = 'bigSun';
+    if(item.id  == 2){
+      titleColor = 'grep-title';
+      iconCn = 'bigSilver';
+    }
+    if(item.id  == 3){
+      titleColor = 'yellow-title';
+      iconCn = 'bigGold';
+    }
+    if(item.id  == 4){
+      titleColor = 'blue-title';
+      iconCn = 'bigDiamonds' ;
+    }
+  %>
+  <h2 class="<%=titleColor%>"><em class="<%=iconCn%>"></em><%=item.tribeName%></h2>
+  <table class="list-table list-table-3" style="margin-bottom: 10px">
+    <thead>
+      <th>积分（X）</th>
+      <th>部落等级</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <%item.integralSections.forEach(function(o){%>
+          <%=o.graterThan%> ≤ X<%if(o.isLimit == 'false'){%> ＜ <%=o.lessThan%><%}%><br/>
+          <%})%>
+        </td>
+        <td>
+          <!--阳光<em class="smartSun"></em><br>
+          阳光<em class="smartSun"></em><em class="smartSun"></em><br>
+          阳光<em class="smartSun"></em><em class="smartSun"></em><em class="smartSun"></em>-->
+          <%item.integralSections.forEach(function(o){%>
+          <span class="<%=titleColor%>"><%=o.levelName%></span><br/>
+          <%})%>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <p class="padding-bottom-10 font-light font12 padding-right-10"><%=item.gift%></p>
+          <div class="giftBagCn clearfix">
+          <%if(item.giftInfo && item.giftInfo.length > 0){%>
+          <%item.giftInfo.forEach(function(gift){%>
+          <%if(gift){%>
+            <div class="giftBagFl fl">
+              <div class="giftBag ubgimages">
+                <img class="photoswipe-view-img" src="http://10.50.28.17:8088/component/attachment_downLoad.jhtml?id=<%=gift.attachmentId%>" alt="<%=gift.giftName%>">
+              </div>
+              <p class="font10 font-alt tac"><%=gift.giftName%></p>
+            </div>
+          <%}%>
+          <%})%>
+          <%}%>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <%})%>
+  <%}else{%>
+  <p style="text-align: center">暂无数据</p>
+  <%}%>
+</div>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="pswp__bg"></div>
+  <div class="pswp__scroll-wrap">
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <div class="pswp__counter"></div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--delete font18 ion-trash-a" title="Delete" ng-click="swipeDelete()" style="display: none"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip"></div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>-->
+      <div class="pswp__caption">
+        <div class="pswp__caption__center"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<% include utribe-footer-menu.html %>
+<% include utribe-footer.html %>

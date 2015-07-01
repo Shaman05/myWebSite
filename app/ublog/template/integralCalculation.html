@@ -1,0 +1,18 @@
+<% include utribe-header.html %>
+<header class="bar bar-cgt has-arr"><a href="javascript:;" class="arr-left inline"></a>积分计算说明</header>
+<table class="list-table list-table-4 hasFooter-menu">
+  <%if(list.length > 0){%>
+  <%list.forEach(function(item){%>
+  <tr>
+    <td><%=item.itemName%></td>
+    <td><%=item.itemDescription%></td>
+  </tr>
+  <%})%>
+  <%}else{%>
+  <tr>
+    <td colspan="100%" style="text-align: center">暂无数据</td>
+  </tr>
+  <%}%>
+</table>
+<% include utribe-footer-menu.html %>
+<% include utribe-footer.html %>

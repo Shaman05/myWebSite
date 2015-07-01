@@ -1,0 +1,61 @@
+<% include utribe-header.html %>
+<header class="bar bar-cgt has-arr">我的积分<a class="logout" href="/logout">退出登录</a></header>
+<table class="list-table list-table-4 hasFooter-menu">
+  <tr>
+    <td>工号</td>
+    <td><%=data.userNo%></td>
+  </tr>
+  <tr>
+    <td>姓名</td>
+    <td><%=data.userName%></td>
+  </tr>
+  <tr>
+    <td>所属分公司</td>
+    <td><%=data.branchName%></td>
+  </tr>
+  <tr>
+    <td>募资累计(万)</td>
+    <td><%=data.raiseTotal%></td>
+  </tr>
+  <tr>
+    <td>除募资外其他收入累计(元)</td>
+    <td><%=data.otherTotal%></td>
+  </tr>
+  <tr>
+    <td>总积分数</td>
+    <td><%=data.integralTotal%></td>
+  </tr>
+  <tr>
+    <td>当期新增积分</td>
+    <td class="font-light"><a href="/currentIntegral" class="block font-light"><%=data.appendIntegral%><span class="fr">&gt;</span></a></td>
+  </tr>
+  <tr>
+    <td>部落等级</td>
+    <td>
+      <%=data.tribeLevel%>
+      <!--<em class="smallSun"></em><em class="smallSun"></em>-->
+    </td>
+  </tr>
+  <tr>
+    <td>部落等级升级相差</td>
+    <td><%=data.tribeLevelGrade%></td>
+  </tr>
+  <tr>
+    <td>分公司内排名</td>
+    <td>第<%=data.branchRank%>名</td>
+  </tr>
+  <tr>
+    <td>U部落排名</td>
+    <td>第<%=data.tribeRank%>名</td>
+  </tr>
+  <tr>
+    <td>统计截止时间</td>
+    <td><%=data.statisticTime%></td>
+  </tr>
+  <tr>
+    <td>积分兑换</td>
+    <td class="font-light"><a href="/redeemRule" class="block font-light">查看可兑换的礼品<span class="fr">&gt;</span></a></td>
+  </tr>
+</table>
+<% include utribe-footer-menu.html %>
+<% include utribe-footer.html %>
