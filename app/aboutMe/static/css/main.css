@@ -2365,7 +2365,7 @@ ul.info-post li {
         font-size: 13px;
     }
     .resp-tabs-container h1 {
-        font-size: 11px;
+        /*font-size: 11px;*/
     }
 
     h5, .h5 {
@@ -2485,7 +2485,7 @@ ul.info-post li {
 
 @media screen and (max-width: 554px) {
     .resp-tabs-container h1 {
-        font-size: 15px;
+        /*font-size: 15px;*/
     }
 
     .blog-article .info li:first-child {
