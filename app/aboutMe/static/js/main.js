@@ -1,8 +1,5 @@
 jQuery(document).ready(function($) {
 
-    /* ---------------------------------------------------------------------- */
-    /*	------------------------------- Loading ----------------------------- */
-    /* ---------------------------------------------------------------------- */
     /*Page Preloading*/
     $(window).load(function() {
         $('#spinner').fadeOut(200);
@@ -11,9 +8,7 @@ jQuery(document).ready(function($) {
         $('#custumize-style').fadeIn(200);
     });
 
-    /* ---------------------------------------------------------------------- */
     /* ------------------------------- Taps profile ------------------------- */
-    /* ---------------------------------------------------------------------- */
     $('.collapse_tabs').click(function() {
         if ($(this).hasClass('collapsed')) {
             $(this).find('i.glyphicon').removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-up");
@@ -22,9 +17,7 @@ jQuery(document).ready(function($) {
         }
     });
 
-    /* ---------------------------------------------------------------------- */
     /* -------------------------- easyResponsiveTabs ------------------------ */
-    /* ---------------------------------------------------------------------- */
     $('#verticalTab').easyResponsiveTabs({
         type: 'vertical',
         width: 'auto',
@@ -34,7 +27,6 @@ jQuery(document).ready(function($) {
     $("h2.resp-accordion").click(function() {
         $(this).find(".icon_menu").addClass("icon_menu_active");
         $("h2.resp-accordion").not(this).find(".icon_menu").removeClass("icon_menu_active");
-        /*	Scroll To */
         $('html, body').animate({scrollTop: $('h2.resp-accordion').offset().top - 50}, 600);
     });
 
@@ -92,14 +84,8 @@ jQuery(document).ready(function($) {
                 autoScrollOnFocus: false
             }
         });
-
-        if (tab_name == "contact")
-            //initialize();
         return false;
     });
-    /*$("#verticalTab h2.resp-accordion").click(function() {
-        initialize();
-    });*/
 
     /* ---------------------------------------------------------------------- */
     /* ---------------------- redimensionnement ----------------------------- */
@@ -128,9 +114,6 @@ jQuery(document).ready(function($) {
     // On lie l'événement resize à la fonction
     window.addEventListener('load', redimensionnement, false);
     window.addEventListener('resize', redimensionnement, false);
-    /*$("#verticalTab h2.resp-accordion").click(function() {
-        initialize();
-    });*/
 
     /* ---------------------------------------------------------------------- */
     /* -------------------------- Contact Form ------------------------------ */
@@ -239,28 +222,6 @@ jQuery(document).ready(function($) {
         horizontal_padding: 5,
         deeplinking: false,
     });
-
-    /* ---------------------------------------------------------------------- */
-    /* ------------------------------ Google Maps --------------------------- */
-    /* ---------------------------------------------------------------------- */
-    /*var map;
-    function initialize() {
-        map = new GMaps({
-            div: '#map',
-            lat: -37.817917,
-            lng: 144.965065,
-            zoom: 16
-        });
-        map.addMarker({
-            lat: -37.81792,
-            lng: 144.96506,
-            title: 'Marker with InfoWindow',
-            icon: 'images/pins-map/map-marker.png',
-            infoWindow: {
-                content: '<p>Melbourne Victoria, 300, Australia</p>'
-            }
-        });
-    }*/
 
     /* ---------------------------------------------------------------------- */
     /* --------------------------------- Blog ------------------------------- */
