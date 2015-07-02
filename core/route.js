@@ -12,7 +12,8 @@ module.exports = {
     app.get('/healthCheck', function(req, res) {
       res.send(
         '<h3>Health check page:</h3>' +
-        '<p>hello world!</p>'
+        '<p>hello world!</p>' +
+        '<p>' + JSON.stringify(conf) + '</p>'
       );
       res.end();
     });
@@ -20,7 +21,7 @@ module.exports = {
     //site route resolve
     try{
       var site_route = require(conf.site_conf.route);
-      site_route.start(app);
+      site_route(app);
     }catch(e){
       console.error(e);
     }

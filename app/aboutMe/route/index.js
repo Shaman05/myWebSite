@@ -7,8 +7,8 @@
 
 var route = require('./route');
 
-module.exports = {
-  start: function(app){
-    app.get('/', route.index);
-  }
+module.exports = function(app){
+
+  app.get('/', route.index);
+
 };
