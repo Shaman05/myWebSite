@@ -21,9 +21,11 @@ module.exports = {
     var tmpArr = [TOKEN, timestamp, nonce];
     tmpArr.sort();
     var tmpStr = tmpArr.join();
+    console.log(tmpArr, tmpStr);
     var shasum = crypto.createHash('sha1');
     shasum.update(tmpStr);
     var shaResult = shasum.digest('hex');
+    console.log('shaResult:' + shaResult, 'signature:' + signature);
     if(shaResult === signature){
       res.send(echostr);
     }else{
