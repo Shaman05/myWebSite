@@ -9,6 +9,7 @@ var wx = require('./wx');
 
 module.exports = {
   wx: wx.getService,
+  wx_post: wx.postService,
   index: function(req, res){
     res.render('index', {
       content: 'Hello!'

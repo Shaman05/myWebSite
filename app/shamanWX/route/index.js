@@ -15,5 +15,6 @@ module.exports = function(app){
   });
 
   app.get('/wx', route.wx);
+  app.post('/wx', route.wx_post);
 
 };
