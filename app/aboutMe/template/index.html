@@ -131,8 +131,7 @@
 </div>
 <!-- End wrapper -->
 
-<!-- jquery | jQuery 1.11.0 -->
-<!-- Credits: http://jquery.com -->
+<% if(ENV == 'dev'){ %>
 <script type="text/javascript" src="/static/js/jquery.min.js"></script>
 <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/static/js/jquery.mixitup.min.js"></script>
@@ -141,6 +140,10 @@
 <script type="text/javascript" src="/static/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript" src="/static/js/jquery.prettyPhoto.js"></script>
 <script type="text/javascript" src="/static/js/main.js"></script>
+<% }else{ %>
+<script type="text/javascript" src="/dist/js/shaman05.min.js"></script>
+<% } %>
+
 <!-- code js for image rotate -->
 <script type="text/javascript">
   var mouseX;

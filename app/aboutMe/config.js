@@ -8,7 +8,7 @@
 var path = require('path');
 
 module.exports = {
-  ENV: 'product',
+  ENV: 'dev',
   route: path.join(__dirname, 'route', 'index'),
   template: 'html',
   template_dir: path.join(__dirname, 'template'),
