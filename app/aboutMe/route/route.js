@@ -5,15 +5,20 @@
  * Time: 15:47
  */
 
+var _ = require('lodash-node');
 var userModel = require('../model/userModel');
+var conf = require('../config');
+var commonData = {
+  ENV: conf.ENV
+};
 
 module.exports = {
   index: function(req, res){
 
-    userModel.list('', function(rows){
-      res.render('test', {
-        content: JSON.stringify(rows)
-      });
+    userModel.list('', function(err, rows){
+      res.render('index', _.assign(commonData, {
+          content: JSON.stringify(rows)
+      }));
     });
 
   }
