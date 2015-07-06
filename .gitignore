@@ -1,4 +1,7 @@
+.idea/
+
 node_modules/
 logs/
 test/
-.idea/
+
+app/*/dist/
