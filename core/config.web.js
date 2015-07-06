@@ -17,8 +17,14 @@ function applyConf(){
   var site_dir = path.join(app_dir, global._APP_NAME_);
   var tpl_suffix = 'html';
   var site_conf = {};
+  var db_conf = {};
   try{
     site_conf = require(path.join(site_dir, 'config.js'));
+  }catch (e){
+    console.error(e);
+  }
+  try{
+    db_conf = require(path.join(site_dir, 'conf.db.js'));
   }catch (e){
     console.error(e);
   }
@@ -26,6 +32,7 @@ function applyConf(){
     app_dir: app_dir,
     site_dir: site_dir,
     site_conf: site_conf,
+    db_conf: db_conf,
     logger: logger,
 
     //排除静态目录

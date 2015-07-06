@@ -5,10 +5,16 @@
  * Time: 15:47
  */
 
+var userModel = require('../model/userModel');
+
 module.exports = {
   index: function(req, res){
-    res.render('index', {
-      content: 'Hello!'
+
+    userModel.list('', function(rows){
+      res.render('test', {
+        content: JSON.stringify(rows)
+      });
     });
+
   }
 };
